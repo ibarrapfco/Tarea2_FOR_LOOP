@@ -1,4 +1,4 @@
-print#1) Cargue las bases de datos incoporando en cada una de ellas la variable 
+#1) Cargue las bases de datos incoporando en cada una de ellas la variable 
 #"tamanio", donde indique de que tamaño es la empresa de ese país.(1 pto)
 
 
