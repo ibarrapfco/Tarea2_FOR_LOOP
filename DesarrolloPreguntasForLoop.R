@@ -1,5 +1,5 @@
 print#1) Cargue las bases de datos incoporando en cada una de ellas la variable 
-#"tamanio", donde indique de que tamaÒo es la empresa de ese paÌs.(1 pto)
+#"tamanio", donde indique de que tama√±o es la empresa de ese pa√≠s.(1 pto)
 
 
 
@@ -50,7 +50,7 @@ PequenaChile <- mutate(PequenaChile, tamanio = pais)
 PequenaColombia <- mutate(PequenaColombia, tamanio = pais)
 PequenaPeru <- mutate(PequenaPeru, tamanio = pais)
 
-#Creacion de tamaÒo de las empresas
+#Creacion de tama√±o de las empresas
 GrandesChile$tamanio[GrandesChile$tamanio == "Chile"] <- "grande"
 GrandesColombia$tamanio[GrandesColombia$tamanio == "Colombia"] <- "grande"
 GrandesPeru$tamanio[GrandesPeru$tamanio == "Peru"] <- "grande"
@@ -67,20 +67,6 @@ PequenaChile$tamanio[PequenaChile$tamanio == "Chile"] <- "pequena"
 PequenaColombia$tamanio[PequenaColombia$tamanio == "Colombia"] <- "pequena"
 PequenaPeru$tamanio[PequenaPeru$tamanio == "Peru"] <- "pequena"
 
-#Los atributos de las bases a evaluar:
-
-#Fecha
-#Pais
-#Ingresos
-#Costos:
-#procentaje_muejeres
-#exportaciones
-#importaciones
-#endeudamiento
-#morosidad
-#reservas
-#spread
-#tasa_interes
 
 #creacion un vector con los atributos de las bases de datos
 vectorAtributos <- c("fecha","pais","ingresos",
@@ -101,12 +87,12 @@ names(MedianasPeru) <- vectorAtributos
 names(MicroChile) <- vectorAtributos
 names(MicroColombia) <- vectorAtributos
 names(MicroPeru) <- vectorAtributos
-#empresas pequeÒas
+#empresas peque√±as
 names(PequenaChile) <- vectorAtributos
 names(PequenaColombia) <- vectorAtributos
 names(PequenaPeru) <- vectorAtributos
 
-#2) Reuna todas las bases en una sola y defina de quÈ tipologÌa (tipo de datos) 
+#2) Reuna todas las bases en una sola y defina de qu√© tipolog√≠a (tipo de datos) 
 #son cada una de las variables que se encuentran en la data.(1 pto) 
 
 empresasAgrup <- GrandesChile%>% 
@@ -126,7 +112,7 @@ empresasAgrup <- GrandesChile%>%
 
 str(empresasAgrup)
 
-#3) Determine a travÈs del uso de condicionales y/o for cu·ntas obervaciones 
+#3) Determine a trav√©s del uso de condicionales y/o for cu√°ntas obervaciones 
 #tiene Peru versus Chile.(2 pto)
 
 { 
@@ -151,8 +137,8 @@ str(empresasAgrup)
   print(paste("Numero de datos observados de Peru:", Num_datObs_peru))
 }
 
-#4) Determine a travÈs del uso de condicionales y/o for øcu·l es el paÌs con 
-#mayor ingresos de explotaciÛn para los aÒos que considera la muestra.(2 pto)
+#4) Determine a trav√©s del uso de condicionales y/o for ¬øcu√°l es el pa√≠s con 
+#mayor ingresos de explotaci√≥n para los a√±os que considera la muestra.(2 pto)
 
 #variables
 ingresos.expChile <- 0
@@ -197,7 +183,7 @@ if(ingresos.expColombia > ingresos.expChile && ingresos.expColombia > ingresos.e
 
 
 
-#5) Genere una variable(columna) , donde si el paÌs es Chile multiplique la 
+#5) Genere una variable(columna) , donde si el pa√≠s es Chile multiplique la 
 #tasa de interes por 0,1, cuando sea Peru le sume 0,3 y, y finalmente si es 
 #Colombia divida por 10 (2 ptos).Use condicionales y/o for.
 
@@ -237,14 +223,14 @@ for (datos in 1:length(empresasAgrup$exportaciones)){
 }
 
 
-#7) Gr·fique algunas variables seleccionadas, las cuales puedan responder 
+#7) Gr√°fique algunas variables seleccionadas, las cuales puedan responder 
 #a una pregunta que se haga con respecto a los datos.
 
 
 #Graficos: Conocer los distintos niveles de importaciones de cada pais y 
 #como es su comportamiento en el periodo 2012-2017
 
-#TamaÒo de las importaciones
+#Tama√±o de las importaciones
 ggplot(data=empresasAgrup, aes(x=tamanio, y=importaciones, fill=pais)) +
   geom_bar(position = "dodge", stat = "identity") + 
   ggtitle("Niveles de importaciones de empresas de cada pais")
